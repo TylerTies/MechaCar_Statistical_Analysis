@@ -15,3 +15,24 @@ The design specifications for the MechaCar suspension coils dictate that the var
 However, a closer look at the individual lots showed that lot 1 and lot 2 had acceptable variances while lot 3 exceded the PSI variance requirement by over 70 PSI.
 
 ![Lot Summary](/Resources/lot_summary.png)
+
+## T-Tests on Suspension Coils
+
+The p-value on the total dataset is 0.06.  Assuming a 0.05 confidence level, we could determine that the mean for the total dataset is statistically similar to the mean of 1,500.  The mean of 1498.78 falls within the 95% confidence interval.
+
+![T-test total](/Resources/ttest_total.png)
+
+When analyzed individually, lot 1 and lot 2 both have p-values greater than 0.05 and are considered statistically similar to the 1500 PSI mean.  Lot 3's p-value falls below 0.5 at 0.42 and is not statistically similar.  The 95% confidence interval does not contain 1500 psi.
+
+![Lot Summary](/Resources/ttest_lots.png)
+
+## Study Design: MechaCar vs Competition
+I would like to see more analysis into horsepower compared to competition.  Is the HP in line with competitors for similarly priced vehicles?  Consumers expect that as price increase, we should also see more powerful and responsive engines.
+
+*Null Hypothesis:* The horsepower offered on MechaCar vehicles is not statistically different than similarly priced competitor vehicles    
+
+*Alternative Hypothesis:* MechaCar horsepower is significantly less than similarly priced competitor vehicles.
+
+A one sided t-test could be used to test MechaCar vehicles against the horsepower of competitor vehicles.  This test would determine if our vehicles are at least as good or better than competitors.  Performing t-tests on subsets of vehicle categories and prices would allow us to make sure we are comparing apples to apples on vehicle model offerings.
+
+Data required for this test would be manufacturer, model, horsepower, MSRP, vehicle type.
